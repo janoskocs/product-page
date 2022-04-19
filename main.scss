@@ -3,3 +3,171 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+//VARIABLES
+$hero-purple: #b061be;
+$hero-orange: #d75c5c;
+$top-span: #ff9800;
+
+$trial-blue: #2b9ce2;
+$scaling-green: #0cc27b;
+$enterprise-purple: #ad63c2;
+
+$headings: #323b3e;
+
+@mixin cta-btn($color) {
+    background-color: $color;
+    border: none;
+    padding: 20px;
+    color: #fff;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px grey;
+    width: 100%;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#hero {
+    height: 350px;
+    background: linear-gradient(70deg, $hero-purple, $hero-orange);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        margin-bottom: 2rem;
+        border-bottom: 2px solid $top-span;
+        background: rgba(44, 44, 44, 0.5);
+        padding: 5px;
+        text-transform: uppercase;
+    }
+}
+
+#selection {
+    display: flex;
+    width: 75vw;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    .box {
+        position: relative;
+        top: -75px;
+        width: 300px;
+        background: #fff;
+        padding: 3rem;
+        box-shadow: 0px 0px 15px grey;
+        border-radius: 2.5px;
+
+        color: $headings;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+
+        ul {
+            list-style: none;
+
+            li {
+                padding: 10px;
+            }
+        }
+
+        &:first-child {
+            border-top: 10px solid $trial-blue;
+
+            h3 {
+                color: $trial-blue;
+            }
+
+            li::before {
+                content: "\2022";
+                color: $trial-blue;
+                display: inline-block;
+                width: 2em;
+                margin-left: -1.2em;
+            }
+
+            button {
+                @include cta-btn($trial-blue);
+            }
+        }
+
+        &:nth-child(2) {
+            border-top: 10px solid $scaling-green;
+
+            h3 {
+                color: $scaling-green;
+            }
+
+            li::before {
+                content: "\2022";
+                color: $scaling-green;
+                display: inline-block;
+                width: 2em;
+                margin-left: -1.2em;
+            }
+
+            button {
+                @include cta-btn($scaling-green);
+            }
+        }
+
+        &:nth-child(3) {
+            border-top: 10px solid $enterprise-purple;
+
+            h3 {
+                color: $enterprise-purple;
+            }
+
+            li::before {
+                content: "\2022";
+                color: $enterprise-purple;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1.2em;
+            }
+
+            button {
+                @include cta-btn($enterprise-purple);
+            }
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 2em;
+            align-self: center;
+            justify-items: end;
+            margin: 1em 0em 1em 0em;
+
+            .dollar {
+                font-size: 0.5em;
+                position: relative;
+                top: -10px;
+                left: 8px;
+            }
+        }
+
+        .most-requested {
+            position: relative;
+            padding: 5px;
+            top: -86px;
+            left: -48px;
+            display: block;
+            background-color: rgb(192, 189, 189);
+            width: 300px;
+            border-radius: 2px;
+            font-weight: bold;
+            text-align: center;
+
+        }
+    }
+}
