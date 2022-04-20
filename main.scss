@@ -126,6 +126,8 @@ body {
 
             h3 {
                 color: $enterprise-purple;
+                position: relative;
+                bottom: 1.8em;
             }
 
             li::before {
